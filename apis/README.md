@@ -11,7 +11,13 @@ MONGODB_URI=mongodb://root:password@localhost:27017/tournament_local?authSource=
 3. To start the development server run this command `npm run dev`
 
 `Models` have all the MongoDB models and schemas
+
 `Services` have all the MongoDB calls done through models
+
 `Routes` have all the API routes logic
+
 `Utils` have some utility functions and variables
+
 `Livecopy` have all the blockchain methods which intreact with contracts
+
+`Helpers` have all the helper functions
