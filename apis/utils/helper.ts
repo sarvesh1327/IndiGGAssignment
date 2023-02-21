@@ -23,7 +23,7 @@ function delayWithTime(time: number) {
 //helperFunction to create a jwt token
 function signToken(id: Types.ObjectId) {
   return jwt.sign({ id }, jwtSecret, {
-    expiresIn: '30d',
+    expiresIn: ENV.JWT_EXPIRES_IN,
   });
 }
 
