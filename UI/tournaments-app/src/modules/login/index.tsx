@@ -24,7 +24,7 @@ const Login: React.FC<any> = () => {
       const otpResponse = await axios.post(
         "http://localhost:4003/auth",
         {
-          body: JSON.stringify({ publicKey: accounts[0] }),
+          publicKey: accounts[0],
         },
         {
           headers: {
@@ -38,13 +38,9 @@ const Login: React.FC<any> = () => {
       const verifyResponse = await axios.patch(
         "http://localhost:4003/auth",
         {
-          body: JSON.stringify({
-            publicKey,
-            otp,
-            signature: signature.startsWith("0x")
-              ? signature
-              : `0x${signature}`,
-          }),
+          publicKey,
+          otp,
+          signature: signature.startsWith("0x") ? signature : `0x${signature}`,
         },
         {
           headers: {
@@ -52,7 +48,7 @@ const Login: React.FC<any> = () => {
           },
         }
       );
-      const verifyResponseData =  verifyResponse.data;
+      const verifyResponseData = verifyResponse.data;
       console.log(verifyResponseData.success);
       if (verifyResponseData.success === true) {
         const { data } = verifyResponseData || {};

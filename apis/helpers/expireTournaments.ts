@@ -34,8 +34,8 @@ async function expireTournament(tournamentId: string) {
       await endGame(gameId);
       return;
     }
-    const playerIds: [any] | [] = [];
-    const scoresAdded: [any] | [] = [];
+    const playerIds: any[] = [];
+    const scoresAdded: any[] = [];
     //if there are some scores to be submitted then they are submitted here with delay to handle the nonce properly
     for (let i = 0; i < playersWithoutSubmittedScore.length; i++) {
       const { _id, score, userId } = playersWithoutSubmittedScore[i] || {};

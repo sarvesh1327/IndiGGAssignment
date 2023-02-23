@@ -71,7 +71,7 @@ async function enterGame(req: Request, res: Response) {
       currentPlayers: currentPlayers + 1,
     });
     const tournamentNewData = await tournamentService().findOneById({ id });
-    if (tournamentNewData.status === 'STARTED') {
+    if (tournamentNewData?.status === 'STARTED') {
       //if tournament is filled to it's capacity we put a delay and wait for the tornament to expire
       expireTournament(id);
     }

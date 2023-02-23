@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { tournamentDB } from '../utils/connection';
 
-interface Iquestion {
+export interface Iquestion {
   title: string;
 }
 
