@@ -9,7 +9,11 @@ import { ENV } from '../utils/constants';
 const gameContractAddress = ENV.gameContractAddress;
 
 //it submits/add score for a player in blockchain with for a game
-async function addScore(gameId: number, score: number, player: string) {
+async function addScore(
+  gameId: number,
+  score: number,
+  player: string | undefined,
+) {
   try {
     let account = ENV.ADMIN_PUBLIC_KEY;
     console.log(`Adding the score for player ${player} in game ${gameId}`);

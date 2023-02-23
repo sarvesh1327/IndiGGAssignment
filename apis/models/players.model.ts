@@ -1,10 +1,11 @@
-import { Schema, Types } from 'mongoose';
+import { Schema, Types, PopulatedDoc } from 'mongoose';
 import { tournamentDB } from '../utils/connection';
+import { Iuser } from './users.model';
 
 export interface Iplayer {
   _id: Types.ObjectId;
   tournamentId: Types.ObjectId;
-  userId: Types.ObjectId;
+  userId: PopulatedDoc<Iuser>;
   score: number;
   scoreSubmitted: boolean;
   createdAt: Date;
@@ -12,7 +13,7 @@ export interface Iplayer {
 }
 
 function playersModel() {
-  const schema = new Schema({
+  const schema = new Schema<Iplayer>({
     tournamentId: Types.ObjectId,
     userId: { type: Types.ObjectId, ref: 'USERS' },
     score: Number,

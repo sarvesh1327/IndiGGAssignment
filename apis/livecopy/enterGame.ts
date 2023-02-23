@@ -8,7 +8,10 @@ import { ENV } from '../utils/constants';
 const gameContractAddress = ENV.gameContractAddress;
 
 //enters the game for user in Blockchain
-async function enterGame(gameId: number, player: string) {
+async function enterGame(
+  gameId: number | undefined,
+  player: string | undefined,
+) {
   try {
     let account = ENV.ADMIN_PUBLIC_KEY;
     console.log(`Entering the game for player ${player} in gameId ${gameId}`);

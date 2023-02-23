@@ -73,9 +73,7 @@ async function playersWithUnsubmittedScore(args: { tournamentId: string }) {
 }
 
 //Submits the scores for the all the unsbumitted players when tournament expires
-async function updateManyToScoreSubmitted(args: {
-  playerIds: [Types.ObjectId] | [];
-}) {
+async function updateManyToScoreSubmitted(args: { playerIds: any[] }) {
   const { playerIds } = args || {};
   return players
     .updateMany(

@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { tournamentDB } from '../utils/connection';
 
-interface Iuser {
+export interface Iuser {
   walletAddress: string;
   createdAt: Date;
   updatedAt: Date;

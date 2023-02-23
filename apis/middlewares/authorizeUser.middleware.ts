@@ -18,7 +18,7 @@ async function authorizeUserMiddleware(
       throw new Error(`idToken is ${idToken}`);
     }
     const decoded = await promisify(jwt.verify)(idToken, jwtSecret);
-    const { id } = decoded;
+    const { id } = decoded || {};
     const userData = await usersService().findOneById({ id });
     if (!userData) {
       throw new Error('User record not present in DB.');

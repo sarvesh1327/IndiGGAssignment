@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { tournamentDB } from '../utils/connection';
 
-interface Itournament {
+export interface Itournament {
   gameId: number;
   name: string;
   currentPlayers: number;

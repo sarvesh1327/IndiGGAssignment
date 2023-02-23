@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { tournamentDB } from '../utils/connection';
 
-interface IAuth {
+export interface IAuth {
   publicKey: string;
   otp: string;
   status: string;

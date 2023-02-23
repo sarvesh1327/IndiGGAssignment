@@ -1,4 +1,19 @@
-const ENV = {
+interface Ienv {
+  MONGODB_URI: string;
+  JWT_SECRET: string;
+  JWT_EXPIRES_IN: string;
+  TOTAL_PLAYERS: string;
+  RELAYER_ADDRESS: string;
+  RELAYER_API_KEY: string;
+  RELAYER_SECRET_KEY: string;
+  ADMIN_PUBLIC_KEY: string;
+  ADMIN_PRIVATE_KEY: string;
+  minimalForwarderContractAddress: string;
+  gameContractAddress: string;
+  chainId: string;
+}
+
+const ENV = <Ienv>{
   MONGODB_URI: process.env.MONGODB_URI,
   JWT_SECRET: process.env.JWT_SECRET,
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,

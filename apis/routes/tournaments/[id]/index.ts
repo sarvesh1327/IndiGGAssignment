@@ -36,7 +36,7 @@ async function getOneById(req: Request, res: Response) {
       res.send({ ...tournamentData._doc, isPlayer: true });
       return;
     }
-    res.send(tournamentData);
+    res.send({ ...tournamentData._doc, isPlayer: false });
   } catch (error) {
     console.error(error);
     res.status(500).send(getErrorObject({ message: 'Internal Server Error' }));
